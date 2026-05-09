@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Page</title>
+</head>
+
+<body>
+
+    <h1>Admin Page</h1>
+
+    <h2>Model Status</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>File</th>
+            <th>Status</th>
+        </tr>
+
+        {% for model, status in model_status.items() %}
+        <tr>
+            <td>{{ model }}</td>
+            <td>{{ status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Feature Counts</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Item</th>
+            <th>Count</th>
+        </tr>
+
+        {% for item, count in feature_count.items() %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

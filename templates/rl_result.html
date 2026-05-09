@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RL Result</title>
+</head>
+
+<body>
+
+    <h1>Reinforcement Learning Result</h1>
+
+    <p><strong>Current State:</strong> {{ result.current_state }}</p>
+
+    <p><strong>Best Next Action:</strong> {{ result.best_action }}</p>
+
+    <h3>Explanation</h3>
+
+    <p>
+        The app uses the saved Q-table.
+        It chooses the action with the highest learned Q-value for the selected state.
+    </p>
+
+    <br>
+    <a href="/rl">Try Again</a>
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

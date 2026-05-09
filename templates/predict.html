@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction</title>
+</head>
+
+<body>
+
+    <h1>Laptop Prediction</h1>
+
+    <form method="POST">
+
+        <h2>Model Version</h2>
+
+        <label>Choose Model:</label><br>
+        <select name="model_choice" required>
+            <option value="original">Original Model</option>
+            <option value="fair">Fair Model</option>
+        </select>
+
+        <h2>User Information</h2>
+
+        <label>User Profile:</label><br>
+        <select name="user_profile" required>
+            <option value="Student">Student</option>
+            <option value="Gamer">Gamer</option>
+            <option value="Designer">Designer</option>
+            <option value="Programmer">Programmer</option>
+            <option value="Office Worker">Office Worker</option>
+        </select>
+        <br><br>
+
+        <label>Budget Class:</label><br>
+        <select name="budget_class" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <br><br>
+
+        <h2>Laptop Information</h2>
+
+        <label>Laptop Type:</label><br>
+        <select name="laptop_type" required>
+            <option value="Notebook">Notebook</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Ultrabook">Ultrabook</option>
+            <option value="Workstation">Workstation</option>
+        </select>
+        <br><br>
+
+        <label>Brand:</label><br>
+        <input type="text" name="brand" required>
+        <br><br>
+
+        <label>CPU Brand:</label><br>
+        <select name="cpu_brand" required>
+            <option value="Intel">Intel</option>
+            <option value="AMD">AMD</option>
+            <option value="Apple">Apple</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+
+        <label>GPU Brand:</label><br>
+        <select name="gpu_brand" required>
+            <option value="Nvidia">Nvidia</option>
+            <option value="AMD">AMD</option>
+            <option value="Intel">Intel</option>
+            <option value="Apple">Apple</option>
+            <option value="Integrated">Integrated</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+
+        <label>Price:</label><br>
+        <input type="number" step="any" name="price" required>
+        <br><br>
+
+        <label>RAM GB:</label><br>
+        <input type="number" step="any" name="ram_gb" required>
+        <br><br>
+
+        <label>SSD GB:</label><br>
+        <input type="number" step="any" name="ssd_gb" required>
+        <br><br>
+
+        <label>HDD GB:</label><br>
+        <input type="number" step="any" name="hdd_gb" required>
+        <br><br>
+
+        <label>CPU Score:</label><br>
+        <input type="number" step="any" name="cpu_score" required>
+        <br><br>
+
+        <label>GPU Score:</label><br>
+        <input type="number" step="any" name="gpu_score" required>
+        <br><br>
+
+        <label>Weight KG:</label><br>
+        <input type="number" step="any" name="weight_kg" required>
+        <br><br>
+
+        <h2>Target Requirements</h2>
+
+        <label>Target RAM GB:</label><br>
+        <input type="number" step="any" name="target_ram_gb" required>
+        <br><br>
+
+        <label>Target Storage GB:</label><br>
+        <input type="number" step="any" name="target_storage_gb" required>
+        <br><br>
+
+        <label>Target GPU Score:</label><br>
+        <input type="number" step="any" name="target_gpu_score" required>
+        <br><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+# Core
+numpy
+pandas
+scikit-learn
+scipy
+openai
+matplotlib
+seaborn
+skfuzzy
+
+joblib
+
+# Explainability (Activity 1)
+shap
+lime
+
+# Web framework (Flask app)
+flask
+flask-cors
+
+# Fuzzy logic (Activity 3)
+scikit-fuzzy
+
+# Reinforcement Learning (Activity 5)
+tqdm
+
+# Optional but useful
+ipython
+notebook
+
+# For handling JSON / API responses
+requests
+
+# For environment consistency
+python-dotenv

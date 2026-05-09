@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anomaly Detection</title>
+</head>
+
+<body>
+
+    <h1>Anomaly Detection</h1>
+
+    <form method="POST">
+
+        {% for feature in features %}
+        <label>{{ feature }}</label><br>
+        <input type="number" step="any" name="{{ feature }}" required>
+        <br><br>
+        {% endfor %}
+
+        <button type="submit">Check Anomaly</button>
+
+    </form>
+
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

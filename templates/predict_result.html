@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction Result</title>
+</head>
+
+<body>
+
+    <h1>Prediction Result</h1>
+
+    <p><strong>Model Used:</strong> {{ result.model_choice }}</p>
+
+    <p><strong>Predicted First Upgrade Priority:</strong> {{ result.upgrade_prediction }}</p>
+
+    <p><strong>Predicted Upgrade Cost:</strong> {{ result.cost_prediction }}</p>
+
+    <h2>Calculated Backend Features</h2>
+
+    <p><strong>RAM Gap:</strong> {{ result.ram_gap_gb }}</p>
+    <p><strong>Storage Gap:</strong> {{ result.storage_gap_gb }}</p>
+    <p><strong>GPU Gap Score:</strong> {{ result.gpu_gap_score }}</p>
+
+    <h2>Explanation</h2>
+
+    <p>
+        The user entered simple laptop information.
+        The backend calculated technical features such as RAM gap, storage gap,
+        and GPU gap, then passed the final feature set to the saved models.
+    </p>
+
+    <br>
+    <a href="/predict">Try Again</a>
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reinforcement Learning</title>
+</head>
+
+<body>
+
+    <h1>Reinforcement Learning Recommendation Step</h1>
+
+    <form method="POST">
+
+        <label>Choose Current State:</label><br>
+
+        <select name="state" required>
+            {% for state in states %}
+            <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <button type="submit">Get Best Next Action</button>
+
+    </form>
+
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>

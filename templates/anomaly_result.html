@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anomaly Result</title>
+</head>
+
+<body>
+
+    <h1>Anomaly Detection Result</h1>
+
+    <p><strong>Anomaly Score:</strong> {{ result.score }}</p>
+
+    <p><strong>Label:</strong> {{ result.label }}</p>
+
+    <p><strong>Message:</strong> {{ result.message }}</p>
+
+    <h3>Explanation</h3>
+
+    <p>
+        The anomaly model checks whether the laptop record looks normal or unusual
+        compared with the training data.
+    </p>
+
+    <br>
+    <a href="/anomaly">Try Again</a>
+    <br>
+    <a href="/">Back Home</a>
+
+</body>
+
+</html>
