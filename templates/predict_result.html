@@ -2,38 +2,114 @@
 <html>
 
 <head>
-    <title>Prediction Result</title>
+    <title>Laptop Decision Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>Prediction Result</h1>
+    <div class="page">
+        <div class="container">
 
-    <p><strong>Model Used:</strong> {{ result.model_choice }}</p>
+            <div class="step-bar">
+                <div class="step">1. User</div>
+                <div class="step">2. Laptop</div>
+                <div class="step">3. Needs</div>
+                <div class="step active">4. Result</div>
+            </div>
 
-    <p><strong>Predicted First Upgrade Priority:</strong> {{ result.upgrade_prediction }}</p>
+            <section class="result-hero">
+                <div class="hero-label">Final Recommendation</div>
+                <h1>Upgrade {{ result.upgrade_prediction }}</h1>
+                <p>
+                    Estimated upgrade cost:
+                    <strong>{{ result.cost_prediction }}</strong>
+                </p>
+                <p>
+                    User profile: {{ result.user_profile }} · Budget: {{ result.budget_class }} ·
+                    Model: {{ result.model_choice }}
+                </p>
+            </section>
 
-    <p><strong>Predicted Upgrade Cost:</strong> {{ result.cost_prediction }}</p>
+            <section class="grid grid-4">
+                <div class="metric">
+                    <div class="metric-title">RAM Gap</div>
+                    <div class="metric-value">{{ result.ram_gap_gb }}</div>
+                </div>
 
-    <h2>Calculated Backend Features</h2>
+                <div class="metric">
+                    <div class="metric-title">Storage Gap</div>
+                    <div class="metric-value">{{ result.storage_gap_gb }}</div>
+                </div>
 
-    <p><strong>RAM Gap:</strong> {{ result.ram_gap_gb }}</p>
-    <p><strong>Storage Gap:</strong> {{ result.storage_gap_gb }}</p>
-    <p><strong>GPU Gap Score:</strong> {{ result.gpu_gap_score }}</p>
+                <div class="metric">
+                    <div class="metric-title">GPU Gap</div>
+                    <div class="metric-value">{{ result.gpu_gap_score }}</div>
+                </div>
 
-    <h2>Explanation</h2>
+                <div class="metric">
+                    <div class="metric-title">Total Urgency</div>
+                    <div class="metric-value">{{ result.total_urgency }}</div>
+                </div>
 
-    <p>
-        The user entered simple laptop information.
-        The backend calculated technical features such as RAM gap, storage gap,
-        and GPU gap, then passed the final feature set to the saved models.
-    </p>
+                <div class="metric">
+                    <div class="metric-title">CPU Gap</div>
+                    <div class="metric-value">{{ result.cpu_gap_score }}</div>
+                </div>
+            </section>
 
-    <br>
-    <a href="/predict">Try Again</a>
-    <br>
-    <a href="/">Back Home</a>
+            <br>
 
+            <section class="grid grid-2">
+                <div class="card">
+                    <span class="badge">Fuzzy Decision</span>
+                    <h2>{{ result.fuzzy.decision }}</h2>
+                    <p>{{ result.fuzzy.advice }}</p>
+                    <p><strong>Score:</strong> {{ result.fuzzy.score }}</p>
+                </div>
+
+                <div class="card">
+                    <span class="badge">Reality Check</span>
+                    <h2>{{ result.anomaly.label }}</h2>
+                    <p>{{ result.anomaly.message }}</p>
+                    <p><strong>Score:</strong> {{ result.anomaly.score }}</p>
+                </div>
+
+                <div class="card">
+                    <span class="badge">RL Next Step</span>
+                    <h2>{{ result.rl.display_action }}</h2>
+                    <p>{{ result.rl.explanation }}</p>
+                    <p><strong>Current State:</strong> {{ result.rl.current_state }}</p>
+                    <p><strong>Next State:</strong> {{ result.rl.next_state }}</p>
+                    <p><strong>Reward:</strong> {{ result.rl.reward }}</p>
+                </div>
+
+                <div class="card">
+                    <span class="badge">Fairness Mode</span>
+                    <h2>{{ result.fairness.choice.title }}</h2>
+                    <p>{{ result.fairness.choice.message }}</p>
+                </div>
+            </section>
+
+            <section class="card" style="margin-top: 18px;">
+                <h2>Decision Summary</h2>
+                <p>
+                    The portal recommends upgrading
+                    <strong>{{ result.upgrade_prediction }}</strong> first.
+                    The fuzzy module classified the urgency as
+                    <strong>{{ result.fuzzy.decision }}</strong>, and the anomaly check labeled this laptop as
+                    <strong>{{ result.anomaly.label }}</strong>.
+                </p>
+            </section>
+
+            <div class="actions">
+                <a href="/predict" class="btn btn-primary">Start New Recommendation</a>
+                <a href="/" class="btn btn-secondary">Back Home</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 
 </html>

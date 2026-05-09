@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="container">
+
+            <div class="step-bar">
+                <div class="step active">1. User</div>
+                <div class="step">2. Laptop</div>
+                <div class="step">3. Needs</div>
+                <div class="step">4. Result</div>
+            </div>
+
+            <section class="form-card">
+                <h1>Tell us about you !</h1>
+                <p>
+                    we want to know who you are so we recommend the best laptop for you.
+                </p>
+                <div class="card rl-guidance-card">
+                    <span class="badge">RL Guidance</span>
+                    <h2>{{ rl_guidance.display_action }}</h2>
+                    <p>{{ rl_guidance.explanation }}</p>
+                    <p><strong>Current State:</strong> {{ rl_guidance.current_state }}</p>
+                    <p><strong>Next State:</strong> {{ rl_guidance.next_state }}</p>
+                </div>
+
+                <br>
+
+                <form method="POST">
+                    <div class="grid grid-3">
+
+                        <label class="field">
+                            <span>Model Version</span>
+                            <select name="model_choice" required>
+                                <option value="original">Original Model</option>
+                                <option value="fair">Fair Model</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>User Profile</span>
+                            <select name="user_profile" required>
+                                <option value="Student">Student</option>
+                                <option value="Gamer">Gamer</option>
+                                <option value="Designer">Designer</option>
+                                <option value="Programmer">Programmer</option>
+                                <option value="Office Worker">Office Worker</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>Budget Class</span>
+                            <select name="budget_class" required>
+                                <option value="Low">Low Budget</option>
+                                <option value="Medium">Medium Budget</option>
+                                <option value="High">High Budget</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+                    <div class="actions">
+                        <a href="/" class="btn btn-secondary">Back Home</a>
+                        <button type="submit" class="btn btn-primary">Continue</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@ from routes.admin_routes import admin_bp
 
 
 app = Flask(__name__)
+app.secret_key = "laptop_decision_portal_secret_key"
 
 app.register_blueprint(home_bp)
 app.register_blueprint(prediction_bp)

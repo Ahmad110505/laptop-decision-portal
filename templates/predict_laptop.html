@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laptop Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="container">
+
+            <div class="step-bar">
+                <div class="step">1. User</div>
+                <div class="step active">2. Laptop</div>
+                <div class="step">3. Needs</div>
+                <div class="step">4. Result</div>
+            </div>
+
+            <section class="form-card">
+                <h1>Current laptop details</h1>
+                <p>
+                    Enter simple specifications. The backend will calculate the technical
+                    model features automatically.
+                </p>
+                <div class="card rl-guidance-card">
+                    <span class="badge">RL Guidance</span>
+                    <h2>{{ rl_guidance.display_action }}</h2>
+                    <p>{{ rl_guidance.explanation }}</p>
+                    <p><strong>Current State:</strong> {{ rl_guidance.current_state }}</p>
+                    <p><strong>Next State:</strong> {{ rl_guidance.next_state }}</p>
+                </div>
+
+                <br>
+                <form method="POST">
+                    <div class="grid grid-3">
+
+                        <label class="field">
+                            <span>Laptop Type</span>
+                            <select name="laptop_type" required>
+                                <option value="Notebook">Notebook</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="Ultrabook">Ultrabook</option>
+                                <option value="Workstation">Workstation</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>Brand</span>
+                            <input type="text" name="brand" placeholder="Dell, HP, Lenovo" required>
+                        </label>
+
+                        <label class="field">
+                            <span>CPU Brand</span>
+                            <select name="cpu_brand" required>
+                                <option value="Intel">Intel</option>
+                                <option value="AMD">AMD</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>GPU Brand</span>
+                            <select name="gpu_brand" required>
+                                <option value="Integrated">Integrated</option>
+                                <option value="Nvidia">Nvidia</option>
+                                <option value="AMD">AMD</option>
+                                <option value="Intel">Intel</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label class="field">
+                            <span>Price</span>
+                            <input type="number" step="any" name="price" placeholder="650" required>
+                        </label>
+
+                        <label class="field">
+                            <span>RAM GB</span>
+                            <input type="number" step="any" name="ram_gb" placeholder="8" required>
+                        </label>
+
+                        <label class="field">
+                            <span>SSD GB</span>
+                            <input type="number" step="any" name="ssd_gb" placeholder="256" required>
+                        </label>
+
+                        <label class="field">
+                            <span>HDD GB</span>
+                            <input type="number" step="any" name="hdd_gb" placeholder="0 if none" required>
+                        </label>
+
+                        <label class="field">
+                            <span>CPU Score</span>
+                            <input type="number" step="any" name="cpu_score" placeholder="1 weak - 10 strong" required>
+                        </label>
+
+                        <label class="field">
+                            <span>GPU Score</span>
+                            <input type="number" step="any" name="gpu_score" placeholder="1 weak - 10 strong" required>
+                        </label>
+
+                        <label class="field">
+                            <span>Weight KG</span>
+                            <input type="number" step="any" name="weight_kg" placeholder="1.8" required>
+                        </label>
+
+                    </div>
+
+                    <div class="actions">
+                        <a href="/predict/profile" class="btn btn-secondary">Back</a>
+                        <button type="submit" class="btn btn-primary">Continue</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

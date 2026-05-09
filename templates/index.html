@@ -3,22 +3,70 @@
 
 <head>
     <title>Laptop Decision Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>Laptop Decision Portal</h1>
+    <div class="page">
+        <div class="container">
 
-    <p>Choose a feature:</p>
+            <section class="hero">
+                <div class="hero-label">AI-Based Laptop Decision Portal</div>
+                <h1>Smart laptop upgrade assistant</h1>
+                <p>
+                    Enter simple laptop details and get one integrated decision:
+                    upgrade prediction, estimated cost, fuzzy urgency, anomaly reality check,
+                    and reinforcement-learning next step.
+                </p>
+            </section>
 
-    <ul>
-        <li><a href="/predict">Prediction</a></li>
-        <li><a href="/fuzzy">Fuzzy Decision Support</a></li>
-        <li><a href="/anomaly">Anomaly Detection</a></li>
-        <li><a href="/rl">Reinforcement Learning</a></li>
-        <li><a href="/admin">Admin</a></li>
-    </ul>
+            <section class="grid grid-3">
+                <a href="/predict" class="card nav-card">
+                    <span class="badge">Main Flow</span>
+                    <h2>Start Recommendation</h2>
+                    <p>
+                        Guided user flow that combines prediction, fairness, fuzzy logic,
+                        anomaly detection, and RL guidance.
+                    </p>
+                </a>
 
+                <a href="/fuzzy" class="card nav-card">
+                    <span class="badge">Demo</span>
+                    <h2>Fuzzy Module</h2>
+                    <p>
+                        Test the fuzzy upgrade urgency evaluator separately.
+                    </p>
+                </a>
+
+                <a href="/anomaly" class="card nav-card">
+                    <span class="badge">Demo</span>
+                    <h2>Anomaly Module</h2>
+                    <p>
+                        Check whether a laptop record looks normal or unusual.
+                    </p>
+                </a>
+
+                <a href="/rl" class="card nav-card">
+                    <span class="badge">Demo</span>
+                    <h2>RL Module</h2>
+                    <p>
+                        Test the saved Q-table next-action recommendation.
+                    </p>
+                </a>
+
+                <a href="/admin" class="card nav-card">
+                    <span class="badge">Admin</span>
+                    <h2>Admin Page</h2>
+                    <p>
+                        View model status, feature counts, states, and actions.
+                    </p>
+                </a>
+            </section>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 
 </html>
